@@ -104,7 +104,7 @@ defmodule BetterParams do
 
   defp map_put(map, k, v) when is_map(map) do
     cond do
-      is_binary(k) -> Map.put(map, String.to_existing_atom(k), v)
+      is_binary(k) -> Map.put(map, String.to_atom(k), v)
       true         -> Map.put(map, k, v)
     end
   rescue
